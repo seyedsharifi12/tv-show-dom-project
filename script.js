@@ -27,6 +27,7 @@ function makePageForEpisodes(episodeList) {
     const seasonCode = `S${formattedSeason}E${formattedepisodeNumber}`;
     const nameAndEpisode = `"${seasonCode} - ${name}"`;
     options.innerText = nameAndEpisode;
+    options.value = `#${name}`;
     select.appendChild(options);
   });
 
@@ -46,6 +47,7 @@ function makePageForEpisodes(episodeList) {
     //creating list element for each episode.
     const li = document.createElement("li");
     li.className = "list-of-episodes";
+    li.id = `${name}`;
     ul.appendChild(li);
     const h2 = document.createElement("h2");
     h2.innerText = name;
@@ -62,13 +64,13 @@ function makePageForEpisodes(episodeList) {
     li.appendChild(summaryOfEpisode);
   });
 }
-// adding an even listener for the select area
+//adding an even listener for the select area
 const selectArea = document.getElementById("select");
+// const formattedNameSeasonAndEpisode = `"${seasonCode}-${name}"`;
 selectArea.addEventListener("change", (event) => {
-  const valueOfelect = event.target.value;
-  if (nameAndEpisode.includes(value)) {
-    value.scrollToView();
-  }
+  const valueOfselect = event.target.value;
+
+  window.location = valueOfselect;
 });
 // Creating a search box function with evenlistener
 const searchArea = document.getElementById("episode-search");
