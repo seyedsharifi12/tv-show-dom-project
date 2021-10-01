@@ -1,6 +1,14 @@
 body {
   background-color: rgb(2, 159, 238);
 }
+#tv-logo {
+  width: 100px;
+  height: 200px;
+}
+/* #header {
+  display: flex;
+  flex-direction: column;
+} */
 #root {
   color: red;
 }
@@ -9,11 +17,20 @@ footer {
   justify-content: center;
 }
 li {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(200, 217, 248);
   height: auto;
   list-style: none;
   margin: 5px;
   border-radius: 10%;
+}
+li div {
+  display: none;
+}
+
+li div.showSummary {
+  display: block;
 }
 ul {
   margin-top: 50px;
@@ -33,6 +50,13 @@ li p {
 img {
   height: auto;
   width: auto;
+  border-radius: 5%;
+}
+#more-btn {
+  width: 200px;
+  margin: auto;
+  border-radius: 5%;
+  color: rgb(95, 1, 1);
 }
 #search-box {
   margin-top: 30px;
